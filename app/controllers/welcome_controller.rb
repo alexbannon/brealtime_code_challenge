@@ -1,12 +1,11 @@
 class WelcomeController < ApplicationController
 
   def index
-    render :status => 200, :json => {}
+    render :status => 200, :json => "OK"
   end
 
   def ok
-    render :json => {hello: "world"}
-    head :no_content
+    render plain: "OK"
   end
 
 end
