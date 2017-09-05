@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
     when 'Email Address'
       response = 'AlexBannon@Gmail.com'
     when 'Puzzle'
-      response = 'A=<<<B>=><C><=<D>>>='
+      response = 'ADBC'
     when 'Phone'
       response = '301-919-4523'
     when 'Referrer'
