@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   end
 
   def ok
-    render plain: "OK Alex Bannon"
+    render plain: "'OK' 'Alex Bannon'"
   end
 
   def answers
