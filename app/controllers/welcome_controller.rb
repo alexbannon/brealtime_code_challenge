@@ -5,12 +5,11 @@ class WelcomeController < ApplicationController
   end
 
   def ok
-    render plain: "OK"
+    render plain: "OK Alex Bannon"
   end
 
   def answers
-    render :json => {
-      OK: "OK",
+    answers = {
       name: "Alex Bannon",
       email_address: "alexbannon@gmail.com",
       phone_number: "301-919-4523",
@@ -23,6 +22,7 @@ class WelcomeController < ApplicationController
       eligibility: "Yes",
       puzzle: "ABCDA=<<<B>=><C><=<D>>>="
     }
+    render :json => answers, :status => 200
   end
 
 end
