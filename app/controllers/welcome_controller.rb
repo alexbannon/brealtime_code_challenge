@@ -1,28 +1,34 @@
 class WelcomeController < ApplicationController
-
   def index
-    render :status => 200, :json => "OK"
+    which_question = params[:q]
+    case which_question
+    when 'Ping'
+      response = 'OK'
+    when 'Name'
+      response = 'Alex Bannon'
+    when 'Position'
+      response = 'Software Engineer - Frontend Systems'
+    when 'Email+Address'
+      response = 'AlexBannon@Gmail.com'
+    when 'Puzzle'
+      response = 'ABCDA=<<<B>=><C><=<D>>>='
+    when 'Phone'
+      response = '301-919-4523'
+    when 'Referrer'
+      response = 'Hired'
+    when 'Degree'
+      response = 'BA Philosophy from Boston University. Web Development Immersive from General Assembly'
+    when 'Years'
+      response = '3 years'
+    when 'Source'
+      response = 'https://github.com/alexbannon/brealtime_code_challenge'
+    when 'Resume'
+      response = 'https://hired.com/resumes/alex-bannon'
+    when 'Status'
+      response = 'Yes'
+    else
+      response = ''
+    end
+    render plain: response
   end
-
-  def ok
-    render plain: "'OK' 'Alex Bannon'"
-  end
-
-  def answers
-    answers = {
-      name: "Alex Bannon",
-      email_address: "alexbannon@gmail.com",
-      phone_number: "301-919-4523",
-      position: "Software Engineer - Frontend Systems",
-      years: "3 years experience",
-      referred: "Hired",
-      education: "BA Philosophy from Boston University",
-      resume: "https://hired.com/resumes/alex-bannon",
-      repo: "https://github.com/alexbannon/brealtime_code_challenge",
-      eligibility: "Yes",
-      puzzle: "ABCDA=<<<B>=><C><=<D>>>="
-    }
-    render :json => answers, :status => 200
-  end
-
 end
