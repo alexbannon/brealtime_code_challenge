@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/ok', to: 'welcome#ok'
+
+  get '/answers', to: 'welcome#answers'
 end
