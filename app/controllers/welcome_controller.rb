@@ -75,6 +75,7 @@ class WelcomeController < ApplicationController
       end
       formatted_response = '+ABCD%0A'
       puzzle_response.each do |key, value|
+        formatted_response += key.to_s.upcase
         value.each do |symbol|
           formatted_response += symbol
         end
