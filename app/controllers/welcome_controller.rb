@@ -32,12 +32,6 @@ class WelcomeController < ApplicationController
       puzzle_response[:c][2] = '='
       puzzle_response[:d][3] = '='
 
-      # {
-      #   a: ["=", ">", "-", "-"],
-      #   b: ["-", "=", "-", "-"],
-      #   c: [">", "-", "=", "-"],
-      #   d: ["-", "<", "-", "="],
-      # }
       any_changes = false
       loop do
         changes = 0
@@ -73,15 +67,15 @@ class WelcomeController < ApplicationController
         end
         break if changes == 0
       end
-      formatted_response = '+ABCD%0A'
+      formatted_response = " ABCD\n"
       puzzle_response.each do |key, value|
         formatted_response += key.to_s.upcase
         value.each do |symbol|
           formatted_response += symbol
         end
-        formatted_response += '%0A'
+        formatted_response += "\n"
       end
-      formatted_response = formatted_response[0..-4]
+      formatted_response = formatted_response[0..-2]
       response = formatted_response
     when 'Phone'
       response = '301-919-4523'
